@@ -1,20 +1,37 @@
 # Vladyslav Magada
-### Lead Software Engineer | Full-Stack JS/TS, Microservices & AI Systems
+### Lead Software Engineer | Full-Stack JS/TS, Distributed Systems & AI Agents
 
-📍 Ukraine (Remote / CET & US EST overlap)[cite: 1]  
-💼 12+ years building enterprise SaaS, event-driven backends, and AI workflows.[cite: 1]  
+📍 Remote (US EST/EDT & CET overlap) • 💼 [LinkedIn](https://www.linkedin.com/in/vmagada) • ✉️ onexample@gmail.com
 
----
-
-### 👨‍💻 Primary Tech Stack
-- **Languages:** TypeScript, JavaScript (Node.js), SQL[cite: 1]
-- **Backend:** NestJS, Express, GraphQL, WebSockets, REST[cite: 1]
-- **Frontend:** React, Micro-frontends, Redux Toolkit[cite: 1]
-- **Architecture & Messaging:** Microservices, Event-Driven (Apache Kafka), Monorepos (Turborepo/Nx)[cite: 1]
-- **DevOps & Infrastructure:** Docker, GitHub Actions, AWS (ECS, Lambda, S3), Redis, PostgreSQL[cite: 1]
-
+12+ years building enterprise SaaS platforms, event-driven backends, and AI workflows. Leading cross-functional engineering teams to modernize legacy systems and ship 25+ production applications and microservices.
 
 ---
 
-### 📈 GitHub Stats & Tooling
-[![Vlad's GitHub Stats](https://github-readme-stats.vercel.app/api?username=onexample&show_icons=true&theme=nord)](https://github.com/anuraghazra/github-readme-stats)
+### 🏗️ Selected Engineering Case Studies
+
+Since my production code lives in private enterprise repositories, below are two real-world architectural challenges I solved and their measurable business impact.
+
+#### 1. Decoupling a Monolithic Enterprise Platform for 3x Faster Delivery
+* **Problem:** As a B2B SaaS ecosystem scaled to 25+ components, its legacy monolithic UI and tightly coupled backend created severe deployment bottlenecks. Minor updates required full regression testing, slowing down releases and risking cascading failures during traffic spikes.
+* **Solution:** Spearheaded a phased architectural migration without halting feature delivery:
+  * **Frontend:** Transitioned from a monolith to independent **Micro-frontends** inside a unified **Monorepo**, modernized tooling (**Webpack → Vite**), and automated pipelines via **GitHub Actions**.
+  * **Backend:** Architected fault-tolerant, event-driven microservices (**Node.js, NestJS, Apache Kafka**) with **Redis** caching and GraphQL query optimization for heavy reporting workloads.
+  * **Quality:** Led a full codebase migration from **JavaScript to TypeScript** and introduced automated test & code review KPIs.
+
+```mermaid
+graph LR
+    subgraph Before ["Legacy Monolith (Bottleneck)"]
+        M[Monolithic UI] --> API[Coupled Backend]
+        API --> DB[(Primary DB)]
+    end
+
+    subgraph After ["Modernized Ecosystem (3x Velocity)"]
+        MF1[Micro-Frontend A] --> GW[API Gateway]
+        MF2[Micro-Frontend B] --> GW
+        GW --> MS1[NestJS Service]
+        GW --> MS2[Reporting Service]
+        MS1 <--> K((Apache Kafka))
+        MS2 <--> K
+        MS2 --> R[(Redis Cache)]
+        MS1 --> DB2[(PostgreSQL)]
+    end
