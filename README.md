@@ -7,7 +7,7 @@ Lead Software Engineer with **12+ years of experience** building and scaling **B
 
 ---
 
-### 🏗️ Selected Engineering Case Studies (STAR)
+### 🏗️ Selected Engineering Case Studies 
 
 *Note: Due to NDA obligations, client names and proprietary identifiers are omitted; architectural patterns and business metrics reflect real production outcomes.*
 
